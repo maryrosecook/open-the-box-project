@@ -10,10 +10,10 @@ module Minatra
       @routes << Route.new(verb, url, &block)
     end
 
-    def route_request(request)
+    def route_request(rack_env)
       route = @routes.find do |route|
-        route.matches?(request["REQUEST_METHOD"],
-                       request["PATH_INFO"])
+        route.matches?(rack_env["REQUEST_METHOD"],
+                       rack_env["PATH_INFO"])
       end
 
       ["200", {}, [route.block.call]]

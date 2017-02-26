@@ -13,8 +13,8 @@ module Minatra
       start_server
     end
 
-    def self.call(env)
-      @@routes.route_request(env)
+    def self.call(rack_env)
+      @@routes.route_request(rack_env)
     end
 
     def self.start_server
