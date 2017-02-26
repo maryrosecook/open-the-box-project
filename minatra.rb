@@ -3,7 +3,6 @@ require "./routes"
 
 module Minatra
   class Base
-    @@server = "thin"
     @@routes = Routes.new
 
     def self.get(url, &block)
