@@ -1,5 +1,5 @@
-require "./thin_runner"
-require "./routes"
+require_relative "../mack/mack/handlers/thin"
+require_relative "./minatra/routes"
 
 module Minatra
   class Base
@@ -20,7 +20,7 @@ module Minatra
     private
 
     def self.start_server
-      Mack::ThinRunner.run(self)
+      Mack::Handler::Thin.run(self)
     end
   end
 end

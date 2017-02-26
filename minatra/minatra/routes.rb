@@ -1,4 +1,4 @@
-require "./route"
+require_relative "./route"
 
 module Minatra
   class Routes
