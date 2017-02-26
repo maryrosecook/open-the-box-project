@@ -1,4 +1,4 @@
-require "rack"
+require "./thin_runner"
 require "./routes"
 
 module Minatra
@@ -17,8 +17,10 @@ module Minatra
       @@routes.route_request(rack_env)
     end
 
+    private
+
     def self.start_server
-      Rack::Handler::WEBrick.run(self)
+      Mack::ThinRunner.run(self)
     end
   end
 end
