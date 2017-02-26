@@ -12,8 +12,7 @@ module Mack
       def self.create_server(app)
         host = "localhost"
         port = 8080
-        args = [host, port, app]
-        ::Thin::Server.new(*args)
+        ::Thin::Server.new(host, port, app)
       end
     end
   end
