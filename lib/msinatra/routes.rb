@@ -1,6 +1,6 @@
 require_relative "./route"
 
-module Minatra
+module Msinatra
   class Routes
     def initialize
       @routes = []

@@ -1,7 +1,7 @@
-require_relative "../mack/handlers/thin"
+require_relative "../mrack/handlers/mthin"
 require_relative "./routes"
 
-module Minatra
+module Msinatra
   class Base
     @@routes = Routes.new
 
@@ -20,7 +20,7 @@ module Minatra
     private
 
     def self.start_server
-      Mack::Handler::Thin.run(self)
+      Mrack::Handler::Mthin.run(self)
     end
   end
 end

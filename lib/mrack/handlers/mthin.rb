@@ -1,8 +1,8 @@
 require_relative "../../mthin/server"
 
-module Mack
+module Mrack
   module Handler
-    class Thin
+    class Mthin
       HOST = "localhost"
       PORT = 8080
 

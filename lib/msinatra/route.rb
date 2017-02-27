@@ -1,4 +1,4 @@
-module Minatra
+module Msinatra
   class Route
     attr_reader :block
 

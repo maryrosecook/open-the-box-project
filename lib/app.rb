@@ -1,8 +1,8 @@
-require_relative "./minatra/minatra"
+require_relative "./msinatra/msinatra"
 
-class App < Minatra::Base
+class App < Msinatra::Base
   get '/' do
-    "hello, world!"
+    "hello, world! yes!"
   end
 
   run!
