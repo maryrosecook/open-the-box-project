@@ -1,5 +1,5 @@
-require_relative "../mack/mack/handlers/thin"
-require_relative "./minatra/routes"
+require_relative "../mack/handlers/thin"
+require_relative "./routes"
 
 module Minatra
   class Base
