@@ -1,4 +1,4 @@
-require "thin"
+require_relative "../../mthin/server"
 
 module Mack
   module Handler
@@ -13,7 +13,7 @@ module Mack
       private
 
       def self.create_server(app)
-        ::Thin::Server.new(HOST, PORT, app)
+        ::Mthin::Server.new(HOST, PORT, app)
       end
     end
   end
