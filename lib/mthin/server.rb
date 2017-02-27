@@ -27,11 +27,16 @@ module Mthin
 
     def handle_request
       socket = @tcp_server.accept
-      http_request = socket.gets
-      rack_response = @app.call(RackEnv.new(http_request))
-      http_response = HttpResponse.new(rack_response)
-      socket.print(http_response.to_s)
+      socket.print(http_response(rack_response(socket.gets)))
       socket.close
+    end
+
+    def rack_response(http_request)
+      @app.call(RackEnv.new(http_request))
+    end
+
+    def http_response(rack_response)
+      HttpResponse.new(rack_response)
     end
   end
 end
