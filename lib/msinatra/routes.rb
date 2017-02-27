@@ -10,13 +10,16 @@ module Msinatra
       @routes << Route.new(verb, url, &block)
     end
 
-    def route_request(rack_env)
-      route = @routes.find do |route|
+    def matching_route(rack_env)
+      @routes.find do |route|
         route.matches?(rack_env["REQUEST_METHOD"],
                        rack_env["PATH_INFO"])
       end
+    end
 
-      ["200", {}, [route.block.call]]
+    def route_request(rack_env)
+      body = matching_route(rack_env).block.call
+      ["200", {}, [body]]
     end
   end
 end
