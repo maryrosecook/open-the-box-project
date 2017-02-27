@@ -7,7 +7,7 @@ module ::Guard
     end
 
     def start
-      @pid = Process.spawn("ruby app.rb")
+      @pid = Process.spawn("ruby lib/app.rb")
     end
 
     def stop

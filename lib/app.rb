@@ -1,4 +1,4 @@
-require "./minatra/minatra"
+require_relative "./minatra/minatra"
 
 class App < Minatra::Base
   get '/' do
